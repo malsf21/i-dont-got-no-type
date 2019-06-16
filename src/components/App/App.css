@@ -12,3 +12,41 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0.5em;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-tight{
+  margin: 0;
+}
+
+.word-correct{
+  color: green;
+}
+
+.word-incorrect{
+  color: red;
+}
+
+.word-current{
+  color: cyan;
+}

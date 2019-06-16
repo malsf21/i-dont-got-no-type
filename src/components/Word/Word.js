@@ -1,5 +1,4 @@
 import React from "react";
-import './Word.css';
 
 class Word extends React.Component {
     render(){
