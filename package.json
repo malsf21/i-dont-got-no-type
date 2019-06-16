@@ -2,6 +2,7 @@
   "name": "i-dont-got-no-type",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://malsf21.github.io/i-dont-got-no-type/",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
