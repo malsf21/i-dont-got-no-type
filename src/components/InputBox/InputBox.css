@@ -1,0 +1,81 @@
+.input-box-container {
+    position: relative;
+    margin: 1em;
+}
+
+.input-box-input {
+    width: 10em;
+    color: white;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: hsl(236, 32%, 26%);
+    padding: 0.35em 0.45em;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.input-box-input:focus {
+    outline: none;
+}
+
+.input-box-border {
+    position: absolute;
+    background-color: #3cefff;
+    transition: transform 0.5s ease;
+}
+
+.input-box-bottom,
+.input-box-top {
+    height: 1px;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);
+}
+
+.input-box-left,
+.input-box-right {
+    width: 1px;
+    top: 0;
+    bottom: 0;
+    transform: scaleY(0);
+}
+
+.input-box-bottom {
+    bottom: 0;
+    transform-origin: bottom right;
+}
+
+input:focus~.input-box-bottom {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+.input-box-right {
+    right: 0;
+    transform-origin: top right;
+}
+
+input:focus~.input-box-right {
+    transform-origin: bottom right;
+    transform: scaleY(1);
+}
+
+.input-box-top {
+    top: 0;
+    transform-origin: top left;
+}
+
+input:focus~.input-box-top {
+    transform-origin: top right;
+    transform: scaleX(1);
+}
+
+.input-box-left {
+    left: 0;
+    transform-origin: bottom left;
+}
+
+input:focus~.input-box-left {
+    transform-origin: top left;
+    transform: scaleY(1);
+}
