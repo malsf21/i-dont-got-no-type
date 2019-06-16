@@ -4,7 +4,7 @@ import './Word.css';
 class Word extends React.Component {
     render(){
         let wordClass = "";
-        if (this.props.currentWord == this.props.index){
+        if (this.props.currentWord === this.props.index){
             wordClass = "word-current";
         }
         else if (this.props.currentWord > this.props.index){
