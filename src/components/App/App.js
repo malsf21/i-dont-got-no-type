@@ -136,6 +136,10 @@ class App extends Component {
           <WordBox words={this.state.words} currentWord={this.state.currentWord} />
           <InputBox checkWord={guess => this.checkWord(guess)} />
           <button className="button" onClick={() => this.generateNewSong()}>restart</button>
+          <hr className="divider" />
+          <footer className="footer">
+            made with &lt;3 by <a href="https://matthewwang.me/" target="_blank" rel="noopener noreferrer">matt</a>
+          </footer>
         </div>
       </div>
     );
