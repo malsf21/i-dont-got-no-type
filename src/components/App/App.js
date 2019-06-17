@@ -14,6 +14,7 @@ class App extends Component {
       incorrect: 0,
       size: 100,
       lowercaseOnly: false,
+      punctuationAllowed: true,
       wrongAllowed: true,
       words: []
     }
@@ -39,6 +40,9 @@ class App extends Component {
       if (this.state.lowercaseOnly){
         word = word.toLowerCase();
       }
+      if (!this.state.punctuationAllowed){
+        word = word.replace(/[.,!?]/g,"");
+      }
       words.push(
         {
           "word": word,
@@ -56,6 +60,12 @@ class App extends Component {
   }
   changeLowercaseOnly = () => {
     this.setState({lowercaseOnly: !this.state.lowercaseOnly}, () => this.generateNewSong()); // required bc. state change is async
+  }
+  changePunctuationAllowed = () => {
+    this.setState({punctuationAllowed: !this.state.punctuationAllowed}, () => this.generateNewSong()); // required bc. state change is async
+  }
+  changeTextSize = e => {
+    this.setState({size: Number(e.target.value)}, () => this.generateNewSong()); // required bc. state change is async
   }
   checkWord = guess => {
     if (this.state.lowercaseOnly){
@@ -92,6 +102,23 @@ class App extends Component {
                 onChange={this.changeLowercaseOnly}
               />
               case insensitive
+            </span>{" "}
+            <span className="input-group">
+              <input
+                type="checkbox"
+                onChange={this.changePunctuationAllowed}
+              />
+              no punctuation
+            </span>{" "}
+            <span className="input-group">
+              <select value={this.state.size} onChange={this.changeTextSize}>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="250">250</option>
+              </select>
+              {" "} length
             </span>
           </div>
           <div className="row">
@@ -108,6 +135,7 @@ class App extends Component {
           </div>
           <WordBox words={this.state.words} currentWord={this.state.currentWord} />
           <InputBox checkWord={guess => this.checkWord(guess)} />
+          <button className="button" onClick={() => this.generateNewSong()}>restart</button>
         </div>
       </div>
     );
