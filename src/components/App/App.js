@@ -138,7 +138,12 @@ class App extends Component {
           <button className="button" onClick={() => this.generateNewSong()}>restart</button>
           <hr className="divider" />
           <footer className="footer">
-            made with &lt;3 by <a href="https://matthewwang.me/" target="_blank" rel="noopener noreferrer">matt</a> on <a href="https://github.com/malsf21/i-dont-got-no-type" target="_blank" rel="noopener noreferrer">github</a>
+            <p>
+              made with &lt;3 by <a href="https://matthewwang.me/" target="_blank" rel="noopener noreferrer">matt</a> on <a href="https://github.com/malsf21/i-dont-got-no-type" target="_blank" rel="noopener noreferrer">github</a>
+            </p>
+            <p>
+              lyrics from <a href="https://genius.com/" target="_blank" rel="noopener noreferrer">genius</a>
+            </p>
           </footer>
         </div>
       </div>
